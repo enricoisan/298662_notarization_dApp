@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notarizzazione documenti su Blockchain</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Notarizzazione documenti su Blockchain</h1>
+    <p>
+      Questo tool consente di notarizzare qualsiasi documento digitale su blockchain Ethereum
+      e verificarne successivamente l'integrità.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Connessione al wallet</h2>
+      
+      <div id="container">
+        <button id="btnConnect">
+          <img src="images/metamask.png" alt="Metamask Logo" class="btn-icon">
+          <span>CONNETTI METAMASK</span>
+        </button>
+      </div>
+
+      <div id="status">
+        <p>Non connesso: connettiti per interagire con il contratto.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Caricamento del file</h2>
+      <p>
+        Verrà calcolato l'hash SHA-256 del file e inviato al contratto per verifica/notarizzazione.
+      </p>
+
+      <div id="container">
+        <div id="fileName" class="muted" aria-live="polite">Nessun file selezionato</div>
+        <label for="file" class="file-btn">
+          <img src="images/document.png" alt="Documento" class="file-icon">
+          <span>SELEZIONA FILE</span>
+        </label>
+        <input id="file" type="file">
+      </div>
+
+      <div id="container">
+        <button id="btnVerify" disabled>VERIFICA</button>
+        <button id="btnNotarize" disabled>NOTARIZZA</button>
+      </div>
+
+      <div id="result">
+        <p>Qui vedrai l’esito di verifica/notarizzazione.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Autore: Nasi Enrico (298662)</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
